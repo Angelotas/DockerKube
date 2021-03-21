@@ -351,7 +351,16 @@
   </div>
 
   <!-- Resources -->
-  <h2>v1.0.0</h2>
+  <h2>v2.0.0</h2>
+
+  <div *ngIf="messages$ | async as messages; else loading">
+    <div class="message" *ngFor="let message of messages">
+      {{message.text}}
+    </div>
+  </div>
+  <ng-template #loading>
+    <img class="spinner" src="assets/spinner.gif" alt="loading...">
+  </ng-template>
 
   <!-- Footer -->
   <footer>
