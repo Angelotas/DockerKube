@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Work with Docker
+
+### Build
+
+`docker build --rm -t hittten/docker-app .`
+
+### Run
+
+`docker run --rm -p 80:80 --name my-app hittten/docker-app`
+
+### Entry into the container
+
+`docker exec -it my-app /bin/bash`
+
+### Run for developers
+
+- PowerShell `docker run --rm -p 80:80 -v ${pwd}/dist/docker-app:/usr/share/nginx/html/ --name my-app hittten/docker-app`
+- Bash `docker run --rm -p 80:80 -v $(pwd)/dist/docker-app:/usr/share/nginx/html/ --name my-app hittten/docker-app`
