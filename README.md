@@ -28,19 +28,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Work with Docker
 
-### Build
+### Production image
 
-`docker build --rm -t hittten/docker-app .`
+- Build `docker build --rm -t docker-app .`
+- Run `docker run --rm -p 80:80 --name my-app docker-app`
+- Entry `docker exec -it my-app /bin/bash`
+- Publish `docker login` and `docker push USER/docker-app:TAG`
 
-### Run
-
-`docker run --rm -p 80:80 --name my-app hittten/docker-app`
-
-### Entry into the container
-
-`docker exec -it my-app /bin/bash`
-
-### Run for developers
-
-- PowerShell `docker run --rm -p 80:80 -v ${pwd}/dist/docker-app:/usr/share/nginx/html/ --name my-app hittten/docker-app`
-- Bash `docker run --rm -p 80:80 -v $(pwd)/dist/docker-app:/usr/share/nginx/html/ --name my-app hittten/docker-app`
+### For developers
+- Build `docker build --rm --target builder -t docker-app .`
+- Run
+  * PowerShell `docker run --rm -p 4200:4200 -v ${pwd}:/app -v /app/node_modules --name my-app docker-app`
+  * Bash `docker run --rm -p 4200:4200 -v $(pwd):/app -v /app/node_modules --name my-app docker-app`

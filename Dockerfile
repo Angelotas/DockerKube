@@ -11,9 +11,9 @@ COPY package*.json ./
 RUN npm install
 
 COPY  ./ ./
-RUN npm run build
+RUN npm run build --prod
 
-EXPOSE 3000
+EXPOSE 4200
 
 CMD npm start -- --host 0.0.0.0
 
@@ -25,4 +25,3 @@ WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/dist/docker-app/ ./
 
 EXPOSE 80
-
