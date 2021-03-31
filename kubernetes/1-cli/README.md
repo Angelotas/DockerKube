@@ -4,6 +4,8 @@
 
 * Concepts https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 * Basis https://kubernetes.io/docs/tutorials/kubernetes-basics/
+* API https://kubernetes.io/docs/reference/kubernetes-api/
+* Tutorials https://kubernetes.io/docs/tutorials/configuration/
 
 ## Installation
 
